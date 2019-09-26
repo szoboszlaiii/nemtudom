@@ -1,7 +1,4 @@
-#include <iostream>
-#include <vector>
-using namespace std;
-
+#include "std_lib_facilities.h"
 int main(){
 double a,b,x=0;
    /* while (cin>>a>>b){
@@ -17,7 +14,7 @@ while (cin>>a>>b){
      else if (a==b){
          cout<<"Ket szam egyenlo";
      }
-    else  {                                                  //2. és 3. 5. feladat
+    else  {                                                  //2. Ã©s 3. 5. feladat
         cout<<"Nagyobb ertek: "<<b<<" kisebb ertek: "<<a<<"\n";
         x=b-a;
     }
@@ -94,21 +91,9 @@ cout<<"Largest: "<<largest<<'\n';
 cout<<"Smallest: "<<smallest<<'\n';
 cout<<"Sum: "<<sum<<'\n';
 cout<<"DB: "<<db<<'\n';
-
-double csere;
-
-  for(int i=0;i<v.size();i++){
-    for (int j=0;j<v.size()-1;j++){
-      if (v[j]>v[j+1]){
-        csere = v[j];
-        v[j] = v[j+1];
-        v[j+1] = csere;
-      }
-    }
-  }
-
-cout<<"Ertekek: ";
+	
  for (int i = 0;i<v.size();i++){
+	 sort(v[i]);
    cout<<v[i]<<" ";
  }
 
