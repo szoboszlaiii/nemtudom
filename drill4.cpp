@@ -91,9 +91,9 @@ cout<<"Largest: "<<largest<<'\n';
 cout<<"Smallest: "<<smallest<<'\n';
 cout<<"Sum: "<<sum<<'\n';
 cout<<"DB: "<<db<<'\n';
-	
+
+sort(v.begin(),v.end());
  for (int i = 0;i<v.size();i++){
-	 sort(v[i]);
    cout<<v[i]<<" ";
  }
 
