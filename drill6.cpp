@@ -164,7 +164,7 @@ double expression()
             t = ts.get();
             break;
         case '-':
-            left += term();    // evaluate Term and subtract
+            left -= term();    // evaluate Term and subtract
             t = ts.get();
             break;
         default:
@@ -187,6 +187,7 @@ try
         Token t = ts.get();
 
         if (t.kind == 'x') break; // 'q' for quit
+	if (t.kind == 'q') break;
         if (t.kind == '=')        // ';' for "print now"
             cout<<"="<<val<<'\n';
         else
