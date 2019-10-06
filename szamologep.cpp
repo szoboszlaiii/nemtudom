@@ -29,7 +29,7 @@ switch(op){
     case '/' : c=a/b; if (b==0) error("0-val nem osztunk\n"); else cout<<"Eredmeny: "<<c<<"\n"; break;
     case '*' : c=a*b; cout<<"Eredmeny: "<<c<<"\n"; break;
     case 'q' : exit(0); break;
-    default: cout<<"Nincs ilyen lehetoseg\n"; main(); break;}
+    default :  error("Nincs ilyen lehetoseg\n"); break;}
 }
 while(cin){
 cin>>op>>d;
@@ -39,7 +39,7 @@ switch(op){
     case '/' : if (d==0) error("0-val nem osztunk\n"); else {c/=d; cout<<"Eredmeny: "<<c<<'\n';} break;
     case '*' : c*=d; cout<<"Eredmeny: "<<c<<"\n"; break;
     case 'q' : exit(0); break;
-    default: cout<<"Nincs ilyen lehetoseg\n"; break;}
+    default:   error("Nincs ilyen lehetoseg\n"); break;}
 }
 
 cout<<"Vegeredmeny: "<<c;
