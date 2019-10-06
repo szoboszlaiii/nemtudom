@@ -16,31 +16,47 @@ Eredmeny: 30
 #include "std_lib_facilities.h"
 
 int main(){
+try{
 cout<<"Add meg az ertekeket, operatorok(+,-,/,*)\nPelda:2+4\n6\n-4\n'q' a kilepes\n";
-double a,b,d;
+double d,a,b;
 double c=0;
 char op;
+if(cin){
 cin>>a>>op>>b;
 switch(op){
-    case '+' : c=a+b; cout<<"Eredmeny: "<<c<<"\n"; break;
+    case '+' : c=(double)a+(double)b; cout<<"Eredmeny: "<<c<<"\n"; break;
     case '-' : c=a-b; cout<<"Eredmeny: "<<c<<"\n"; break;
-    case '/' : c=a/b; if (b==0) {cout<<"0-val nem osztunk\n"; main();} else cout<<"Eredmeny: "<<c<<"\n"; break;
+    case '/' : c=a/b; if (b==0) error("0-val nem osztunk\n"); else cout<<"Eredmeny: "<<c<<"\n"; break;
     case '*' : c=a*b; cout<<"Eredmeny: "<<c<<"\n"; break;
     case 'q' : exit(0); break;
     default: cout<<"Nincs ilyen lehetoseg\n"; main(); break;}
-
+}
 while(cin){
 cin>>op>>d;
 switch(op){
     case '+' : c+=d; cout<<"Eredmeny: "<<c<<"\n"; break;
     case '-' : c-=d; cout<<"Eredmeny: "<<c<<"\n"; break;
-    case '/' : if (d==0) cout<<"0-val nem osztunk\n"; else {c/=d; cout<<"Eredmeny: "<<c<<'\n';} break;
+    case '/' : if (d==0) error("0-val nem osztunk\n"); else {c/=d; cout<<"Eredmeny: "<<c<<'\n';} break;
     case '*' : c*=d; cout<<"Eredmeny: "<<c<<"\n"; break;
     case 'q' : exit(0); break;
     default: cout<<"Nincs ilyen lehetoseg\n"; break;}
 }
 
 cout<<"Vegeredmeny: "<<c;
+        return 0;
+	}
 
-return 0;
+	catch (exception& e) {
+		cerr << "Hiba: " << e.what() << endl;
+		char p;
+		while (cin >> p && p != ';');
+		return 1;
+	}
+	catch (...) {
+		cerr << "Hiba\n";
+		char p;
+		while (cin >> p && p != ';');
+		return 2;
+	}
+
 }
