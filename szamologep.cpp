@@ -48,14 +48,12 @@ cout<<"Vegeredmeny: "<<c;
 
 	catch (exception& e) {
 		cerr << "Hiba: " << e.what() << endl;
-		char p;
-		while (cin >> p && p != ';');
+		keep_window_open();
 		return 1;
 	}
 	catch (...) {
 		cerr << "Hiba\n";
-		char p;
-		while (cin >> p && p != ';');
+		keep_window_open();
 		return 2;
 	}
 
