@@ -14,9 +14,7 @@ Eredmeny: 30
 */
 
 #include "std_lib_facilities.h"
-
-int main(){
-try{
+void calculate(){
 cout<<"Add meg az ertekeket, operatorok(+,-,/,*)\nPelda:2+4\n6\n-4\n'q' a kilepes\n";
 double d,a,b;
 double c=0;
@@ -29,7 +27,8 @@ switch(op){
     case '/' : c=a/b; if (b==0) error("0-val nem osztunk\n"); else cout<<"Eredmeny: "<<c<<"\n"; break;
     case '*' : c=a*b; cout<<"Eredmeny: "<<c<<"\n"; break;
     case 'q' : exit(0); break;
-    default :  error("Nincs ilyen lehetoseg\n"); break;}
+    default :  error("Nincs ilyen lehetoseg\n"); break;
+    }
 }
 while(cin){
 cin>>op>>d;
@@ -39,10 +38,17 @@ switch(op){
     case '/' : if (d==0) error("0-val nem osztunk\n"); else {c/=d; cout<<"Eredmeny: "<<c<<'\n';} break;
     case '*' : c*=d; cout<<"Eredmeny: "<<c<<"\n"; break;
     case 'q' : exit(0); break;
-    default:   error("Nincs ilyen lehetoseg\n"); break;}
+    default:   error("Nincs ilyen lehetoseg\n"); break;
+    }
 }
 
 cout<<"Vegeredmeny: "<<c;
+
+}
+int main(){
+try{
+	calculate();
+	keep_window_open();
         return 0;
 	}
 
@@ -58,3 +64,5 @@ cout<<"Vegeredmeny: "<<c;
 	}
 
 }
+
+
