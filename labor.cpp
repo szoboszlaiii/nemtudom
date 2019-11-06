@@ -7,6 +7,11 @@ int main(){
     char x=0;
     ifstream ifstr("input.txt");
     ofstream ofstr("output.txt");
+   if (!ifstr) {
+cout<<"Nem talalhato az input.txt\n";
+return 0;
+}
+
 while(c<1024*1024*10){
     c++;
 ifstr >> x;
